@@ -3,12 +3,14 @@ from fpgrowth_py import fpgrowth
 from datetime import datetime
 import requests
 from io import StringIO
+from requests.packages.urllib3.exceptions import InsecureRequestWarning
+
 
 url_tracks = "https://homepages.dcc.ufmg.br/~cunha/hosted/cloudcomp-2023s2-datasets/2023_spotify_ds1.csv"
 url_songs = "https://homepages.dcc.ufmg.br/~cunha/hosted/cloudcomp-2023s2-datasets/2023_spotify_songs.csv"
 
-response_tracks = requests.get(url_tracks)
-response_songs = requests.get(url_songs)
+response_tracks = requests.get(url_tracks, verify=False)
+response_songs = requests.get(url_songs, verify=False)
 
 if response_tracks.status_code == 200 and response_songs.status_code == 200:
     tracks  = pd.read_csv(StringIO(response_tracks.text))
