@@ -32,7 +32,7 @@ min_support_ratio = 0.05
 min_confidence = 0.05
 freqItemSet, rules = fpgrowth(lista_de_listas, minSupRatio=min_support_ratio, minConf=min_confidence)
 
-output_file_path = '/model_gen/project2-pv/association_rules.txt'
+output_file_path = '/home/pedroribeiro/project2-pv/association_rules.txt'
 
 with open(output_file_path, 'w') as file:
     file.write("version: 1.0\n")
