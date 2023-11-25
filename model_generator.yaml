@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: gerador-pod-pedroribeiro
+spec:
+  containers:
+  - name: gerador-container
+    image: pdrgbr/playlists-recommender:0.4
+    volumeMounts:
+    - name: project2-pv-pedroribeiro
+      mountPath: /home/pedroribeiro/project2-pv
+  restartPolicy: Never
+  volumes:
+  - name: project2-pv-pedroribeiro
+    persistentVolumeClaim:
+      claimName: project2-pvc-pedroribeiro
