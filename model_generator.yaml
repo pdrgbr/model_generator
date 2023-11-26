@@ -5,7 +5,7 @@ metadata:
 spec:
   containers:
   - name: gerador-container
-    image: pdrgbr/playlists-recommender:0.4
+    image: pdrgbr/playlists-recommender:0.5
     volumeMounts:
     - name: project2-pv-pedroribeiro
       mountPath: /home/pedroribeiro/project2-pv
