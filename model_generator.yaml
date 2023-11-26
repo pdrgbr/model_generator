@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: gerador-pod-pedroribeiro
+  name: gerador-pod-pedroribeiro-2
 spec:
   containers:
   - name: gerador-container
